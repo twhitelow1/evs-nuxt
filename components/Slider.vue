@@ -79,7 +79,7 @@
            <!-- Slide 4 -->
            <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
-             <!-- <img src="/img/child-sits-christmas-tree.webp" class="ls-bg"  alt="Slide background"/> -->
+             <img src="/img/christmaspresents-baby.webp" class="ls-bg"  alt="Slide background"/>
              <!-- Parallax Image -->
              <ClientOnly>
              <img src="/img/bee.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:7;">
