@@ -2,11 +2,14 @@
    <div class="Slider">
      <!-- Page width 'Boxed' of 'Full' -->
        <!-- Slider -->
+     
        <div id="layerslider">
           <!-- Slide 1 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
+             <ClientOnly>
              <img src="/img/kid1.webp" class="ls-bg"  alt="Slide background"/>
+            </ClientOnly>
              <!-- Parallax Image -->z
              <img src="/img/sun.png" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1000;easingin:fadeIn;parallaxlevel:7;">
              <!-- Text -->
@@ -20,14 +23,20 @@
                 </div>
              </div>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/flower.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
+            </ClientOnly>
           </div>
           <!-- Slide 2 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
+             <ClientOnly>
              <img src="/img/sitter-playing-with-baby.webp" class="ls-bg"  alt="Slide background"/>
+            </ClientOnly>
              <!-- Parallax Image -->
+            <ClientOnly>
              <img src="/img/bee.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:7;">
+             </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="#long-term-nann"><h1>Looking for Long Term Care? </h1></a>
@@ -38,14 +47,20 @@
                 </div>
              </div>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/star.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
+             </ClientOnly>
           </div>
           <!-- Slide 3 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
+             <ClientOnly>
              <img src="/img/petsitting.webp" class="ls-bg"  alt="Slide background"/>
-             <!-- Parallax Image -->z
+            </ClientOnly>
+             <!-- Parallax Image -->
+<ClientOnly>
              <img src="/img/sun.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1000;easingin:fadeIn;parallaxlevel:7;">
+            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text container" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a  href="#pets"><h1>Now Offering Pet Sitting!</h1></a>
@@ -57,14 +72,18 @@
                 </div>
              </div>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/flower.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
+            </ClientOnly>
           </div>
            <!-- Slide 4 -->
            <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
              <!-- <img src="/img/child-sits-christmas-tree.webp" class="ls-bg"  alt="Slide background"/> -->
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/bee.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:7;">
+            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="#activities"><h1>Gift a Helping Hand!</h1></a>
@@ -75,14 +94,20 @@
                 </div>
              </div>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/star.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
+            </ClientOnly>
           </div>
           <!-- Slide 5 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
+             <ClientOnly>
              <img src="/img/playingbylake.webp" class="ls-bg"  alt="Slide background"/>
+            </ClientOnly>
              <!-- Parallax Image -->z
+             <ClientOnly>
              <img src="/img/sun.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1000;easingin:fadeIn;parallaxlevel:7;">
+            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="#activities"><h1>Your Kids Are On Vacation Too!</h1></a>
@@ -93,14 +118,20 @@
                 </div>
              </div>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/star.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
+            </ClientOnly>
           </div>
           <!-- Slide 6 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
+             <ClientOnly>
              <img src="/img/boy-with-phone2.webp" class="ls-bg"  alt="Slide background"/>
+            </ClientOnly>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/bee.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:7;">
+            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text" id="mobile-app-slide" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="/mobile"><h1>Download our Free Mobile App!</h1></a>
@@ -111,14 +142,20 @@
                 </div>
              </div>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/star.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
+            </ClientOnly>
           </div>
           <!-- Slide 6 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
+             <ClientOnly>
              <img src="/img/layout/playinginsnow.jpg" class="ls-bg"  alt="Slide background"/>
+            </ClientOnly>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/sun.png" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1000;easingin:fadeIn;parallaxlevel:7;">
+            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="https://eaglevalleysitters.enginehire.io/application-form/195/4175"><h1>We're Hiring!</h1></a>
@@ -129,9 +166,12 @@
                 </div>
              </div>
              <!-- Parallax Image -->
+             <ClientOnly>
              <img src="/img/flower.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
+            </ClientOnly>
           </div>
        </div>
+     
        <!-- /Layerslider ends-->
        <!-- Clouds SVG Divider -->
        <div class="hidden-xs container-fluid cloud-divider">
@@ -169,14 +209,20 @@
  <style>
  </style>
  
- <script>
- export default {
-   data: function () {
-     return {
-       message: "Welcome to Vue.js!",
-     };
-   },
-   created: function () {},
-   methods: {},
- };
- </script>
+
+<script setup lang="ts">
+
+onMounted(() => {
+   console.log("mounted");
+   $('#layerslider').layerSlider({
+            responsive: true,
+            responsiveUnder: 1280,
+            layersContainer: 1280,
+            skin: 'fullwidth',
+            hoverPrevNext: false,
+            skinsPath: './layerslider/skins/',
+            autoStart: true,
+			autoPlayVideos : false
+        });
+})
+</script>

@@ -127,5 +127,27 @@ export default {
   },
   created: function () {},
   methods: {},
+  mounted(){
+   //Team Carousel
+
+   $("#owl-team").owlCarousel({
+      items: 4,
+      dots: true,
+      loop: true,
+      margin: 20,
+      autoplay: false,
+      nav: true,
+      navText: [
+        "<i class='flaticon-arrows-1'></i>",
+        "<i class='flaticon-arrows'></i>",
+      ],
+      responsive: {
+        1: { items: 1 },
+        550: { items: 2 },
+        1000: { items: 3 },
+        1200: { items: 4 },
+      },
+    });
+  }
 };
 </script>

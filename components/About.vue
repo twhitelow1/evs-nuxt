@@ -13,12 +13,20 @@
                <div class="col-sm-12 col-lg-5">
                   <!-- Carousel -->
                   <div id="owl-about" class="owl-carousel">
+                     <ClientOnly>
                      <div class="item">
+                      
                         <img class="img-responsive" src="/img/teachingkid.webp" loading="lazy" alt="">
+                    
                      </div>
+                  </ClientOnly>
+                  <ClientOnly>
                      <div class="item">
+                     
                         <img class="img-responsive" src="/img/babysitterwithkid.webp" loading="lazy" alt="">
+                     
                      </div>
+                  </ClientOnly>
                   </div>
                </div>
                <!-- text -->
@@ -63,8 +71,10 @@
             <!-- /row features -->
             <div class="col-lg-12 col-sm-12 paper_block">
                <h3 class="text-center">What Parents Think</h3>
+              
                <div id="owl-testimonials" class="owl-carousel">
                   <!-- testimonial 1-->
+                  <ClientOnly>
                   <blockquote>
                      <div class="col-md-4 col-lg-4 col-centered">
                         <!-- testimonial image-->
@@ -77,7 +87,9 @@
                         <small><i class="fa fa-user">Steve O</i></small>
                      </div>
                   </blockquote>
+               </ClientOnly>
                   <!-- testimonial 2-->
+                  <ClientOnly>
                   <blockquote>
                      <div class="col-md-4 col-lg-4 col-centered">
                         <!-- testimonial image-->
@@ -90,7 +102,9 @@
                         <small><i class="fa fa-user">Roddy R.</i></small>
                      </div>
                   </blockquote>
+                  </ClientOnly>
                   <!-- testimonial 3-->
+                  <ClientOnly>
                   <blockquote>
                      <div class="col-md-4 col-lg-4 col-centered">
                         <!-- testimonial image-->
@@ -103,7 +117,9 @@
                         <small><i class="fa fa-user">Jeremy D</i></small>
                      </div>
                   </blockquote>
+                  </ClientOnly>
                   <!-- testimonial 4-->
+                  <ClientOnly>
                   <blockquote>
                      <div class="col-md-4 col-lg-4 col-centered">
                         <!-- testimonial image-->
@@ -115,7 +131,9 @@
                         <small><i class="fa fa-user">Julie W</i></small>
                      </div>
                   </blockquote>
+                  </ClientOnly>
                   <!-- testimonial 5-->
+                  <ClientOnly>
                   <blockquote>
                      <div class="col-md-4 col-lg-4 col-centered">
                         <!-- testimonial image-->
@@ -127,7 +145,9 @@
                         <small><i class="fa fa-user"></i>Jeremy M</small>
                      </div>
                   </blockquote>
+                  </ClientOnly>
                   <!-- testimonial 6-->
+                  <ClientOnly>
                   <blockquote>
                      <div class="col-md-4 col-lg-4 col-centered">
                         <!-- testimonial image-->
@@ -139,7 +159,9 @@
                         <small><i class="fa fa-user"></i>Erica F</small>
                      </div>
                   </blockquote>
+                  </ClientOnly>
                   <!-- testimonial 7-->
+                  <ClientOnly>
                   <blockquote>
                      <div class="col-md-4 col-lg-4 col-centered">
                         <!-- testimonial image-->
@@ -151,7 +173,9 @@
                         <small><i class="fa fa-user"></i>Christine G</small>
                      </div>
                   </blockquote>
+                  </ClientOnly>
                   <!-- testimonial 8-->
+                  <ClientOnly>
                   <blockquote>
                      <div class="col-md-4 col-lg-4 col-centered">
                         <!-- testimonial image-->
@@ -163,8 +187,9 @@
                         <small><i class="fa fa-user"></i>Renee B</small>
                      </div>
                   </blockquote>
-                  
+                  </ClientOnly>
                </div>
+            
                <!--owl testimonials-->
             </div>
             <!-- /col-lg-7 -->
@@ -185,5 +210,31 @@ export default {
   },
   created: function () {},
   methods: {},
+  mounted(){
+   $("#owl-testimonials").owlCarousel({
+      dots: true,
+      loop: true,
+      autoplay: false,
+      nav: true,
+      navText: [
+        "<i class='flaticon-arrows-1'></i>",
+        "<i class='flaticon-arrows'></i>",
+      ],
+      responsive: {
+        1: { items: 1 },
+        991: { items: 2 },
+      },
+    });
+
+    //About Carousel
+
+    $("#owl-about").owlCarousel({
+      items: 1,
+      dots: true,
+      loop: true,
+      autoplay: false,
+    });
+
+  }
 };
 </script>

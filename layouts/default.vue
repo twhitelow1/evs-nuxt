@@ -57,18 +57,18 @@ useHead({
   
   
   
-  script: [  { src: '/js/jquery.min.js', defer: true ,tagPosition:'bodyClose'},
-        { src: '/js/bootstrap.min.js', defer: true ,tagPosition:'bodyClose'},
+  script: [  { src: '/js/jquery.min.js', defer: true ,},
+        { src: '/js/bootstrap.min.js', defer: true },
        
-        { src: '/js/jquery.isotope.js', defer: true ,tagPosition:'bodyClose'},
+        { src: '/js/jquery.isotope.js', defer: true },
        
         { src: '/js/plugins.js', defer: true ,tagPosition:'bodyClose'},
         { src: '/js/contact.js', defer: true ,tagPosition:'bodyClose'},
         { src: '/js/prefixfree.js', defer: true ,tagPosition:'bodyClose'},
-        { src: '/layerslider/js/greensock.js', defer: true ,tagPosition:'bodyClose'},
-        { src: '/layerslider/js/layerslider.load.js', defer: true ,tagPosition:'bodyClose'},
-        { src: '/layerslider/js/layerslider.transitions.js', defer: true ,tagPosition:'bodyClose'},
-        { src: '/layerslider/js/layerslider.kreaturamedia.jquery.js', defer: true ,tagPosition:'bodyClose'},
+        { src: '/layerslider/js/greensock.js', defer: true },
+   //     { src: '/layerslider/js/layerslider.load.js', defer: true ,tagPosition:'bodyClose'},
+        { src: '/layerslider/js/layerslider.transitions.js', defer: true },
+        { src: '/layerslider/js/layerslider.kreaturamedia.jquery.js', defer: true ,},
         { src: '/js/mc-validate.js', defer: true ,tagPosition:'bodyClose' },
         { src: '/js/main.js', defer: true ,tagPosition:'bodyClose'},
     ]
