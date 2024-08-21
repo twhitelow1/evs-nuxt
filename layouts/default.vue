@@ -2,6 +2,7 @@
     <div>
 
         <Head>
+           
             <Meta charset="utf-8" />
             <!--[if IE]>
       <Meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,17 @@
             <Meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
             <Meta name="description"
                 content="Eagle Valley Sitters is committed to creating a safe, nurturing, and fun environment for children of all ages. We are dedicated to providing professional, safe, and reliable childcare to Vail and it’s surrounding areas." />
-            <Meta name="author" content="" />
+            <Meta name="author" content="Eagle Valley Sitters" />
             <Meta charset="UTF-8" />
+            <meta name="robots" content="index, follow">
             <!-- <Link rel="preload" as="image" href="/img/kid1.webp" /> -->
+             <!-- Open Graph Tags For Social-->
+             <meta property="og:title" content="Eagle Valley Sitters - Trusted Babysitting Services in Eagle County">
+             <meta property="og:description" content="Eagle Valley Sitters offers reliable and professional babysitting services in Eagle County. Book a sitter today!">
+             <meta property="og:url" content="https://eaglevalleysitters.com">
+             <meta property="og:image" content="https://eaglevalleysitters.com/img/eaglevalleysitters-social.webp">
+             <link rel="canonical" href="https://eaglevalleysitters.com/">
+             <meta name="language" content="en-US">
             <!-- Page title -->
             <Title>Eagle Valley Sitters</Title>
             <!--[if lt IE 9]>
@@ -48,6 +57,7 @@
         </Head>
         
         <Body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+            
             <slot />
         </Body>
 </div>
@@ -57,7 +67,18 @@ useHead({
   
   
   
-  script: [  { src: '/js/jquery.min.js', defer: true ,},
+  script: [  
+        {
+            // The inline GTM script
+            children: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WQVGPP65');`,
+            type: 'text/javascript',
+            async: true
+            },
+        { src: '/js/jquery.min.js', defer: true ,},
         { src: '/js/bootstrap.min.js', defer: true },
        
         { src: '/js/jquery.isotope.js', defer: true },
@@ -71,6 +92,7 @@ useHead({
         { src: '/layerslider/js/layerslider.kreaturamedia.jquery.js', defer: true ,},
         { src: '/js/mc-validate.js', defer: true ,tagPosition:'bodyClose' },
         { src: '/js/main.js', defer: true ,tagPosition:'bodyClose'},
+
     ]
 })
 </script>
