@@ -7,6 +7,7 @@
             <!--[if IE]>
       <Meta http-equiv="X-UA-Compatible" content="IE=edge">
       <![endif]-->
+            <meta name="google-site-verification" content="JK4tcNJE7Pwy1c-ieAPY4IsEsJfTmw9N50uAKH7H_H0" />
             <Meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
             <Meta name="description"
                 content="Eagle Valley Sitters is committed to creating a safe, nurturing, and fun environment for children of all ages. We are dedicated to providing professional, safe, and reliable childcare to Vail and it’s surrounding areas." />
