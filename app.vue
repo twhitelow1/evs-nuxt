@@ -158,7 +158,7 @@
           </div>
           <!-- / container -->
           <hr>
-          <p>Copyright © 2023 / Website Developed by <a href="https://dub-low.consulting">DubLow Consulting LLC</a></p>
+          <p>Copyright © 2023 / Website Developed by <a href="https://dublowdigital.com">DubLow Digital</a></p>
           <p><a href="/privacy">Privacy Policy</a>.</p>
           <p><a href="https://eaglevalleysitters.enginehire.io/login/195">Account Login</a>
             -

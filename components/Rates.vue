@@ -30,33 +30,11 @@
 						<!-- List -->
                         <h3>Pricing</h3>
                         <i>Will be charged to your card on file</i>
-                        <!-- <table>
-                           <tr>
-                              <th>Number of Children</th>
-                              <th>Hourly Rate</th>
-                           </tr>
-                           <tr>
-                              <td>1 Child</td>
-                              <td>$25</td> 
-                           </tr>
-                           <tr>
-                              <td>2 Children</td>
-                              <td>$28</td>
-                           </tr>
-                           <tr>
-                              <td>3 Children</td>
-                              <td>$31</td>
-                           </tr>
-                           <tr>
-                              <td>4 Children</td>
-                              <td>$34</td>
-                           </tr>
-                        </table> -->
                         <ul class="pricing-feature-list">
-                           <li>1 Child: $37</li>
-                           <li>2 Children: $40</li>
-                           <li>3 Children: $43</li>
-                           <li>4 Children: = $46</li>
+                           <li>1 Child: $39</li>
+                           <li>2 Children: $42</li>
+                           <li>3 Children: $45</li>
+                           <li>4 Children: = $48</li>
                            <p>* More than 4 children will require 2 sitters. If children are in diapers, the child to sitter ratio is 2:1.</p>
                            <p>All cancellations made within 48 hours of the booking start time will incur a full charge.  Unfortunately, there can be no exceptions to this policy.</p>
                            <p>* Please note that cancellations made during Christmas Vacation weeks (12/18- 1/5) have a 7 day cancellation policy.</p>
@@ -105,8 +83,8 @@
                         <h3>Pricing</h3>
                         <i >Will be charged to your card</i>
                         <ul class="pricing-feature-list">
-                           <li>$35 Per Hour</li>
-                           <li>$135 Per Night</li>
+                           <li>$40 Per Hour</li>
+                           <li>$145 Per Night</li>
                         </ul>
                         <h3>Terms</h3>
                         <i >Overnight In-Home Pet Siting, Dog Walking, Hourly Pet Sitting</i>
