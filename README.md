@@ -54,6 +54,15 @@ yarn build
 
 # bun
 bun run build
+
+```
+Deploy the application for production ( After Build):
+
+```bash
+
+npm run generate
+firebase deploy
+
 ```
 
 Locally preview production build:
