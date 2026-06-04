@@ -454,6 +454,15 @@ United States<br />
   <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it. To request to review, update, or delete your personal information, please visit: <a href="https://eaglevalleysitters.com">eaglevalleysitters.com</a>.</p>
   <p>This privacy policy was created using Termly's Privacy Policy Generator. </p>
   <p>* Please note that cancellations made during Christmas Vacation weeks (12/18- 1/5) have a 7 day cancellation policy.</p>
+
+  <h4>Phone Number Privacy Policy:</h4>
+    <p>We respect your privacy and are committed to protecting your personal information.</p>
+    <p>Use of Information: We use your phone number to send SMS messages regarding your inquiry and customer care related topics </p>
+    <p>Mobile phone information or opt-in data collected will not be shared, sold, or disclosed to third parties or affiliates for marketing purposes. </p>
+    <p>Opt-Out: Reply "STOP" to unsubscribe or "HELP" for assistance.</p>
+    <p>Message Disclosures: Message frequency varies. Message and data rates may apply.</p>
+    <p>Data Security: Your data is protected and retained only as needed.</p>
+
       </div>
     </section>
   </div>

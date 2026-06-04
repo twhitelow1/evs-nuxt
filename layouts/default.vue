@@ -55,6 +55,7 @@
             <Link rel="stylesheet"
                 href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" />
             <Link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" />
+            <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
         </Head>
         
         <Body id="page-top" data-spy="scroll" data-target=".navbar-custom">

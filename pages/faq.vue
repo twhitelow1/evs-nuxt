@@ -59,13 +59,13 @@
               <br /><br />
 
               <h4>What is your holiday pricing?</h4>
-              <p>July 4th- 43/hr plus 5 each additional child</p>
-              <p>Thanksgiving Day- 51/ hr plus 5 each additional child</p>
-              <p>Christmas Eve - 53/ hr plus 5 each additional child</p>
-              <p>Christmas Day- 53/ hr plus 5 each additional child</p>
-              <p>New Year’s Eve after 5 pm- 65/ hr plus 5 each additional child *5 hour minimum</p>
-              <p>New Year’s Day- 51/ hr plus 5 each additional child *5 hour minimum</p>
-              <p>Valentine’s Day after 5 pm- 41/ hr + 5 each additional child</p>
+              <p>July 4th- 55/hr plus 5 each additional child</p>
+              <p>Thanksgiving Day- 55/ hr plus 5 each additional child</p>
+              <p>Christmas Eve - 60/ hr plus 5 each additional child</p>
+              <p>Christmas Day- 60/ hr plus 5 each additional child</p>
+              <p>New Year’s Eve after 5 pm- 70/ hr plus 5 each additional child *5 hour minimum</p>
+              <p>New Year’s Day- 60/ hr plus 5 each additional child *5 hour minimum</p>
+              <p>Valentine’s Day after 5 pm- 55/ hr + 5 each additional child</p>
               <br /><br />
 
               <h4>Do you charge any rush fees for last minute bookings?</h4>

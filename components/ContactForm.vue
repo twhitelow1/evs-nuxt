@@ -14,6 +14,7 @@
                     </div>
                   </ClientOnly>
                     <textarea name="message" id="message" class="textarea-field form-control" rows="4" v-model="message" placeholder="Enter your message" required=""></textarea>
+                    <div class="g-recaptcha" data-sitekey="6LeCGHUrAAAAAK75qcNrSLf3_B6vePt4mrTZnqP-" data-action="LOGIN"></div><br/>
                     <button type="submit" id="submit_btn" value="Submit" class="btn center-block">Send message</button>
                   </form>
                 </div> 
