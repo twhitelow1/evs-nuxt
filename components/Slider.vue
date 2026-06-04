@@ -175,28 +175,49 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount } from 'vue'
 
-// LayerSlider depends on jQuery + the kreaturamedia plugin, both of which are
-// loaded via useHead in layouts/default.vue with `defer: true`. Deferred
-// scripts are NOT guaranteed to finish before Vue's onMounted hook fires, so
-// we poll for readiness instead of calling layerSlider() blindly.
+// LayerSlider needs jQuery + greensock + transitions + the kreaturamedia
+// plugin loaded IN STRICT ORDER. Nuxt's useHead with defer:true does not
+// reliably guarantee execution order across all browsers/scenarios, which
+// caused "$(...).layerSlider is not a function" errors on first load.
+//
+// To fix that for real, we load the LayerSlider scripts here, ourselves,
+// chained by onload, then call layerSlider() once everything is ready.
 
-let readyCheckInterval: ReturnType<typeof setInterval> | null = null
-let readyCheckTimeout: ReturnType<typeof setTimeout> | null = null
 let initialized = false
+const SCRIPT_FLAG = '__ls_scripts_loaded__'
 
-const clearTimers = () => {
-   if (readyCheckInterval) { clearInterval(readyCheckInterval); readyCheckInterval = null }
-   if (readyCheckTimeout) { clearTimeout(readyCheckTimeout); readyCheckTimeout = null }
+const loadScriptOnce = (src: string): Promise<void> => {
+   return new Promise((resolve, reject) => {
+      // If a <script> with this src is already in the DOM, don't add it again.
+      const existing = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement | null
+      if (existing) {
+         if ((existing as any)._loaded) return resolve()
+         existing.addEventListener('load', () => resolve())
+         existing.addEventListener('error', () => reject(new Error('Failed: ' + src)))
+         return
+      }
+      const s = document.createElement('script')
+      s.src = src
+      s.async = false
+      s.onload = () => { (s as any)._loaded = true; resolve() }
+      s.onerror = () => reject(new Error('Failed: ' + src))
+      document.head.appendChild(s)
+   })
 }
 
-const initSlider = (): boolean => {
-   if (initialized) return true
+const initSlider = () => {
+   if (initialized) return
    const w: any = window as any
-   if (!w.$ || !w.$.fn || typeof w.$.fn.layerSlider !== 'function') return false
+   if (!w.$ || !w.$.fn || typeof w.$.fn.layerSlider !== 'function') {
+      console.warn('[LayerSlider] plugin not registered on jQuery after load')
+      return
+   }
    const $el = w.$('#layerslider')
-   if (!$el.length) return false
+   if (!$el.length) {
+      console.warn('[LayerSlider] #layerslider element not found')
+      return
+   }
    const slideCount = $el.children('.ls-slide').length
-   // eslint-disable-next-line no-console
    console.log('[LayerSlider] initializing with', slideCount, 'slides')
 
    $el.layerSlider({
@@ -205,37 +226,39 @@ const initSlider = (): boolean => {
       layersContainer: 1280,
       skin: 'fullwidth',
       hoverPrevNext: false,
-      // Absolute path — the relative form breaks on subroutes like /faq.
       skinsPath: '/layerslider/skins/',
       autoStart: true,
       autoPlayVideos: false
    })
    initialized = true
-   return true
+}
+
+const loadAllAndInit = async () => {
+   const w: any = window as any
+   try {
+      // Ensure jQuery is present. If layouts/default.vue's deferred
+      // jquery.min.js hasn't executed yet, load it ourselves first.
+      if (!w.$ || !w.jQuery) {
+         await loadScriptOnce('/js/jquery.min.js')
+      }
+      await loadScriptOnce('/layerslider/js/greensock.js')
+      await loadScriptOnce('/layerslider/js/layerslider.transitions.js')
+      await loadScriptOnce('/layerslider/js/layerslider.kreaturamedia.jquery.js')
+      // Yield one tick so the plugin file's top-level eval can finalize
+      // attaching $.fn.layerSlider before we call it.
+      await new Promise(r => setTimeout(r, 0))
+      initSlider()
+   } catch (e) {
+      console.error('[LayerSlider] failed to load scripts', e)
+   }
 }
 
 onMounted(() => {
    if (typeof window === 'undefined') return
-
-   // Try immediately in case scripts are already loaded (warm client nav).
-   if (initSlider()) return
-
-   // Otherwise poll every 50ms for up to 10s.
-   readyCheckInterval = setInterval(() => {
-      if (initSlider()) clearTimers()
-   }, 50)
-   readyCheckTimeout = setTimeout(() => {
-      clearTimers()
-      if (!initialized) {
-         // eslint-disable-next-line no-console
-         console.warn('[LayerSlider] jQuery or layerSlider plugin failed to load within 10s.')
-      }
-   }, 10000)
+   loadAllAndInit()
 })
 
 onBeforeUnmount(() => {
-   clearTimers()
-   // Destroy the slider so client-side nav back to this page can re-init cleanly.
    const w: any = window as any
    if (initialized && w.$) {
       try {
@@ -244,7 +267,6 @@ onBeforeUnmount(() => {
             inst.layerSlider('destroy')
          }
       } catch (e) {
-         // eslint-disable-next-line no-console
          console.warn('[LayerSlider] destroy failed:', e)
       }
       initialized = false

@@ -1,16 +1,4 @@
- $(document).ready(function () {
-	"use strict";
-
-// Calling LayerSlider 
-		
-        $('#layerslider').layerSlider({
-            responsive: true,
-            responsiveUnder: 1280,
-            layersContainer: 1280,
-            skin: 'fullwidth',
-            hoverPrevNext: false,
-            skinsPath: './layerslider/skins/',
-            autoStart: true,
-			autoPlayVideos : false
-        });
- });
+// Intentionally empty: LayerSlider is now initialized programmatically by
+// components/Slider.vue, which loads jQuery + LayerSlider in a guaranteed
+// order. Keeping this file present (but inert) prevents 404s from any
+// stale browser cache or third-party reference.
