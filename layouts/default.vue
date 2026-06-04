@@ -55,7 +55,6 @@
             <Link rel="stylesheet"
                 href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" />
             <Link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" />
-            <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
         </Head>
         
         <Body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -95,6 +94,9 @@ useHead({
         // function" errors on first load.
         { src: '/js/mc-validate.js', defer: true ,tagPosition:'bodyClose' },
         { src: '/js/main.js', defer: true ,tagPosition:'bodyClose'},
+        // reCAPTCHA Enterprise (moved out of the template because inline
+        // <script> tags inside Vue templates trigger a Vite compile error).
+        { src: 'https://www.google.com/recaptcha/enterprise.js', async: true, defer: true },
 
     ]
 })

@@ -32,10 +32,10 @@
             </button>
             <div class="navbar-brand-centered page-scroll">
               <NuxtLink :to="{ path: '/', hash: '#layerslider' }">
-                <img
-                  :src="isMobile ? '/img/evs-logo-landscape.webp' : '/img/EVSlogo.webp'"
-                  alt="Eagle Valley Sitters"
-                />
+                <picture>
+                  <source media="(max-width: 989px)" srcset="/img/evs-logo-landscape.webp" />
+                  <img src="/img/EVSlogo.webp" alt="Eagle Valley Sitters" />
+                </picture>
               </NuxtLink>
             </div>
           </div>
@@ -178,24 +178,6 @@
   </NuxtLayout>
 </template>
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-// Default to desktop logo so SSR + initial paint never render an empty <img>.
-// Once mounted on the client, swap to landscape logo if viewport < 990px.
-const isMobile = ref(false)
-
-const handleResize = () => {
-  isMobile.value = window.innerWidth < 990
-}
-
-onMounted(() => {
-  handleResize()
-  window.addEventListener('resize', handleResize)
-})
-
-onBeforeUnmount(() => {
-  if (typeof window !== 'undefined') {
-    window.removeEventListener('resize', handleResize)
-  }
-})
+// Logo swap is handled in CSS via <picture><source media="..."> in the
+// template. No JS needed.
 </script>
