@@ -211,18 +211,78 @@
  
 
 <script setup lang="ts">
+import { onMounted, onBeforeUnmount } from 'vue'
+
+// LayerSlider depends on jQuery + the kreaturamedia plugin, both of which are
+// loaded via useHead in layouts/default.vue with `defer: true`. Deferred
+// scripts are NOT guaranteed to finish before Vue's onMounted hook fires, so
+// we poll for readiness instead of calling layerSlider() blindly.
+
+let readyCheckInterval: ReturnType<typeof setInterval> | null = null
+let readyCheckTimeout: ReturnType<typeof setTimeout> | null = null
+let initialized = false
+
+const clearTimers = () => {
+   if (readyCheckInterval) { clearInterval(readyCheckInterval); readyCheckInterval = null }
+   if (readyCheckTimeout) { clearTimeout(readyCheckTimeout); readyCheckTimeout = null }
+}
+
+const initSlider = (): boolean => {
+   if (initialized) return true
+   const w: any = window as any
+   if (!w.$ || !w.$.fn || typeof w.$.fn.layerSlider !== 'function') return false
+   const $el = w.$('#layerslider')
+   if (!$el.length) return false
+
+   $el.layerSlider({
+      responsive: true,
+      responsiveUnder: 1280,
+      layersContainer: 1280,
+      skin: 'fullwidth',
+      hoverPrevNext: false,
+      // Absolute path — the relative form breaks on subroutes like /faq.
+      skinsPath: '/layerslider/skins/',
+      autoStart: true,
+      autoPlayVideos: false
+   })
+   initialized = true
+   return true
+}
 
 onMounted(() => {
-   console.log("mounted");
-   $('#layerslider').layerSlider({
-            responsive: true,
-            responsiveUnder: 1280,
-            layersContainer: 1280,
-            skin: 'fullwidth',
-            hoverPrevNext: false,
-            skinsPath: './layerslider/skins/',
-            autoStart: true,
-			autoPlayVideos : false
-        });
+   if (typeof window === 'undefined') return
+
+   // Try immediately in case scripts are already loaded (warm client nav).
+   if (initSlider()) return
+
+   // Otherwise poll every 50ms for up to 10s.
+   readyCheckInterval = setInterval(() => {
+      if (initSlider()) clearTimers()
+   }, 50)
+   readyCheckTimeout = setTimeout(() => {
+      clearTimers()
+      if (!initialized) {
+         // eslint-disable-next-line no-console
+         console.warn('[LayerSlider] jQuery or layerSlider plugin failed to load within 10s.')
+      }
+   }, 10000)
+})
+
+onBeforeUnmount(() => {
+   clearTimers()
+   // Destroy the slider so client-side nav back to this page can re-init cleanly.
+   const w: any = window as any
+   if (initialized && w.$) {
+      try {
+         const inst = w.$('#layerslider')
+         if (inst.length && typeof inst.layerSlider === 'function') {
+            inst.layerSlider('destroy')
+         }
+      } catch (e) {
+         // eslint-disable-next-line no-console
+         console.warn('[LayerSlider] destroy failed:', e)
+      }
+      initialized = false
+   }
 })
 </script>
