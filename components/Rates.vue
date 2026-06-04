@@ -86,6 +86,8 @@
                         <ul class="pricing-feature-list">
                            <li>$40 Per Hour</li>
                            <li>$145 Per Night</li>
+                           <li>$40 Per Hour</li>
+                           <li>$145 Per Night</li>
                         </ul>
                         <h3>Terms</h3>
                         <i >Overnight In-Home Pet Siting, Dog Walking, Hourly Pet Sitting</i>
