@@ -7,9 +7,7 @@
           <!-- Slide 1 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
-             <ClientOnly>
              <img src="/img/kid1.webp" class="ls-bg"  alt="Slide background"/>
-            </ClientOnly>
              <!-- Parallax Image -->z
              <img src="/img/sun.png" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1000;easingin:fadeIn;parallaxlevel:7;">
              <!-- Text -->
@@ -23,20 +21,14 @@
                 </div>
              </div>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/flower.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
-            </ClientOnly>
           </div>
           <!-- Slide 2 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
-             <ClientOnly>
              <img src="/img/sitter-playing-with-baby.webp" class="ls-bg"  alt="Slide background"/>
-            </ClientOnly>
              <!-- Parallax Image -->
-            <ClientOnly>
              <img src="/img/bee.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:7;">
-             </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="#long-term-nann"><h1>Looking for Long Term Care? </h1></a>
@@ -47,20 +39,14 @@
                 </div>
              </div>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/star.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
-             </ClientOnly>
           </div>
           <!-- Slide 3 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
-             <ClientOnly>
              <img src="/img/petsitting.webp" class="ls-bg"  alt="Slide background"/>
-            </ClientOnly>
              <!-- Parallax Image -->
-<ClientOnly>
              <img src="/img/sun.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1000;easingin:fadeIn;parallaxlevel:7;">
-            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text container" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a  href="#pets"><h1>Now Offering Pet Sitting!</h1></a>
@@ -72,18 +58,14 @@
                 </div>
              </div>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/flower.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
-            </ClientOnly>
           </div>
            <!-- Slide 4 -->
            <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
              <img src="/img/christmaspresents-baby.webp" class="ls-bg"  alt="Slide background"/>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/bee.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:7;">
-            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="#activities"><h1>Gift a Helping Hand!</h1></a>
@@ -94,20 +76,14 @@
                 </div>
              </div>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/star.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
-            </ClientOnly>
           </div>
           <!-- Slide 5 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
-             <ClientOnly>
              <img src="/img/playingbylake.webp" class="ls-bg"  alt="Slide background"/>
-            </ClientOnly>
              <!-- Parallax Image -->z
-             <ClientOnly>
              <img src="/img/sun.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1000;easingin:fadeIn;parallaxlevel:7;">
-            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="#activities"><h1>Your Kids Are On Vacation Too!</h1></a>
@@ -118,20 +94,14 @@
                 </div>
              </div>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/star.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
-            </ClientOnly>
           </div>
           <!-- Slide 6 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
-             <ClientOnly>
              <img src="/img/boy-with-phone2.webp" class="ls-bg"  alt="Slide background"/>
-            </ClientOnly>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/bee.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:7;">
-            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text" id="mobile-app-slide" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="/mobile"><h1>Download our Free Mobile App!</h1></a>
@@ -142,20 +112,14 @@
                 </div>
              </div>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/star.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
-            </ClientOnly>
           </div>
           <!-- Slide 6 -->
           <div class="ls-slide" data-ls="transition2d:104;timeshift:-2000;">
              <!-- Background image -->
-             <ClientOnly>
              <img src="/img/layout/playinginsnow.jpg" class="ls-bg"  alt="Slide background"/>
-            </ClientOnly>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/sun.png" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="delayin:1000;easingin:fadeIn;parallaxlevel:7;">
-            </ClientOnly>
              <!-- Text -->
              <div class="ls-l header-text"  data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:2;">
                 <a href="https://eaglevalleysitters.enginehire.io/application-form/195/4175"><h1>We're Hiring!</h1></a>
@@ -166,9 +130,7 @@
                 </div>
              </div>
              <!-- Parallax Image -->
-             <ClientOnly>
              <img src="/img/flower.webp" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="delayin:1500;easingin:fadeIn;parallaxlevel:6;">
-            </ClientOnly>
           </div>
        </div>
      
@@ -211,18 +173,103 @@
  
 
 <script setup lang="ts">
+import { onMounted, onBeforeUnmount } from 'vue'
+
+// LayerSlider needs jQuery + greensock + transitions + the kreaturamedia
+// plugin loaded IN STRICT ORDER. Nuxt's useHead with defer:true does not
+// reliably guarantee execution order across all browsers/scenarios, which
+// caused "$(...).layerSlider is not a function" errors on first load.
+//
+// To fix that for real, we load the LayerSlider scripts here, ourselves,
+// chained by onload, then call layerSlider() once everything is ready.
+
+let initialized = false
+const SCRIPT_FLAG = '__ls_scripts_loaded__'
+
+const loadScriptOnce = (src: string): Promise<void> => {
+   return new Promise((resolve, reject) => {
+      // If a <script> with this src is already in the DOM, don't add it again.
+      const existing = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement | null
+      if (existing) {
+         if ((existing as any)._loaded) return resolve()
+         existing.addEventListener('load', () => resolve())
+         existing.addEventListener('error', () => reject(new Error('Failed: ' + src)))
+         return
+      }
+      const s = document.createElement('script')
+      s.src = src
+      s.async = false
+      s.onload = () => { (s as any)._loaded = true; resolve() }
+      s.onerror = () => reject(new Error('Failed: ' + src))
+      document.head.appendChild(s)
+   })
+}
+
+const initSlider = () => {
+   if (initialized) return
+   const w: any = window as any
+   if (!w.$ || !w.$.fn || typeof w.$.fn.layerSlider !== 'function') {
+      console.warn('[LayerSlider] plugin not registered on jQuery after load')
+      return
+   }
+   const $el = w.$('#layerslider')
+   if (!$el.length) {
+      console.warn('[LayerSlider] #layerslider element not found')
+      return
+   }
+   const slideCount = $el.children('.ls-slide').length
+   console.log('[LayerSlider] initializing with', slideCount, 'slides')
+
+   $el.layerSlider({
+      responsive: true,
+      responsiveUnder: 1280,
+      layersContainer: 1280,
+      skin: 'fullwidth',
+      hoverPrevNext: false,
+      skinsPath: '/layerslider/skins/',
+      autoStart: true,
+      autoPlayVideos: false
+   })
+   initialized = true
+}
+
+const loadAllAndInit = async () => {
+   const w: any = window as any
+   try {
+      // Ensure jQuery is present. If layouts/default.vue's deferred
+      // jquery.min.js hasn't executed yet, load it ourselves first.
+      if (!w.$ || !w.jQuery) {
+         await loadScriptOnce('/js/jquery.min.js')
+      }
+      await loadScriptOnce('/layerslider/js/greensock.js')
+      await loadScriptOnce('/layerslider/js/layerslider.transitions.js')
+      await loadScriptOnce('/layerslider/js/layerslider.kreaturamedia.jquery.js')
+      // Yield one tick so the plugin file's top-level eval can finalize
+      // attaching $.fn.layerSlider before we call it.
+      await new Promise(r => setTimeout(r, 0))
+      initSlider()
+   } catch (e) {
+      console.error('[LayerSlider] failed to load scripts', e)
+   }
+}
 
 onMounted(() => {
-   console.log("mounted");
-   $('#layerslider').layerSlider({
-            responsive: true,
-            responsiveUnder: 1280,
-            layersContainer: 1280,
-            skin: 'fullwidth',
-            hoverPrevNext: false,
-            skinsPath: './layerslider/skins/',
-            autoStart: true,
-			autoPlayVideos : false
-        });
+   if (typeof window === 'undefined') return
+   loadAllAndInit()
+})
+
+onBeforeUnmount(() => {
+   const w: any = window as any
+   if (initialized && w.$) {
+      try {
+         const inst = w.$('#layerslider')
+         if (inst.length && typeof inst.layerSlider === 'function') {
+            inst.layerSlider('destroy')
+         }
+      } catch (e) {
+         console.warn('[LayerSlider] destroy failed:', e)
+      }
+      initialized = false
+   }
 })
 </script>

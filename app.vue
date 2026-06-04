@@ -31,12 +31,12 @@
               <i class="fa fa-bars"></i>
             </button>
             <div class="navbar-brand-centered page-scroll">
-              <ClientOnly>
-              <NuxtLink v-if="window.width > 990" :to="{ path: '/', hash: '#layerslider' }"><img
-                  src="/img/EVSlogo.webp" alt="" /></NuxtLink>
-              <NuxtLink v-if="window.width < 990" :to="{ path: '/', hash: '#layerslider' }"><img
-                  src="/img/evs-logo-landscape.webp" alt="" /></NuxtLink>
-                </ClientOnly>
+              <NuxtLink :to="{ path: '/', hash: '#layerslider' }">
+                <picture>
+                  <source media="(max-width: 989px)" srcset="/img/evs-logo-landscape.webp" />
+                  <img src="/img/EVSlogo.webp" alt="Eagle Valley Sitters" />
+                </picture>
+              </NuxtLink>
             </div>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -177,42 +177,7 @@
     </div>
   </NuxtLayout>
 </template>
-<script>
-export default {
-  data: function () {
-    return {
-      window: {
-        width: 0,
-      },
-      comingsoon: false,
-    };
-  },
-  created() {
-    if (process.client) {
-    window.addEventListener("resize", this.handleResize);
-    }
-  },
-  beforeMount() {
-    if (process.client) {
-    this.window.width = window.innerWidth;
-    }
-  },
-  beforeUnmount() {
-    if (process.client) {
-    window.removeEventListener("resize", this.handleResize);
-    }
-  },
-  methods: {
-    handleResize() {
-      if (process.client) {
-      this.window.width = window.innerWidth;
-      }
-    },
-    getWindowWidht() {
-      if (process.client) {
-        return window.width;
-      }
-    }
-  },
-};
+<script setup>
+// Logo swap is handled in CSS via <picture><source media="..."> in the
+// template. No JS needed.
 </script>

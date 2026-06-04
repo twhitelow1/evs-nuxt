@@ -55,7 +55,6 @@
             <Link rel="stylesheet"
                 href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" />
             <Link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" />
-            <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
         </Head>
         
         <Body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -88,12 +87,16 @@ useHead({
         { src: '/js/plugins.js', defer: true ,tagPosition:'bodyClose'},
         { src: '/js/contact.js', defer: true ,tagPosition:'bodyClose'},
         { src: '/js/prefixfree.js', defer: true ,tagPosition:'bodyClose'},
-        { src: '/layerslider/js/greensock.js', defer: true },
-   //     { src: '/layerslider/js/layerslider.load.js', defer: true ,tagPosition:'bodyClose'},
-        { src: '/layerslider/js/layerslider.transitions.js', defer: true },
-        { src: '/layerslider/js/layerslider.kreaturamedia.jquery.js', defer: true ,},
+        // LayerSlider (greensock, transitions, kreaturamedia plugin) is now
+        // loaded and initialized by components/Slider.vue with an explicit
+        // serial onload chain, because <useHead> defer-ordering proved
+        // unreliable in this app and caused "$(...).layerSlider is not a
+        // function" errors on first load.
         { src: '/js/mc-validate.js', defer: true ,tagPosition:'bodyClose' },
         { src: '/js/main.js', defer: true ,tagPosition:'bodyClose'},
+        // reCAPTCHA Enterprise (moved out of the template because inline
+        // <script> tags inside Vue templates trigger a Vite compile error).
+        { src: 'https://www.google.com/recaptcha/enterprise.js', async: true, defer: true },
 
     ]
 })
