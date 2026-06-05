@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "target": "production",
+      "target": "eagle-valley-sitters",
       "public": ".output/public",
       "ignore": [
         "firebase.json",
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "target": "staging",
+      "target": "nuxt-version",
       "public": ".output/public",
       "ignore": [
         "firebase.json",

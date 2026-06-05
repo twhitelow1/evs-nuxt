@@ -30,7 +30,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: eagle-valley-sitters
-          target: production
+          target: eagle-valley-sitters
           channelId: live
 
       - name: Deploy to Staging
@@ -40,5 +40,5 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: eagle-valley-sitters
-          target: staging
+          target: nuxt-version
           channelId: live

@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "eagle-valley-sitters"
-  }
+  },
+  "targets": {
+    "eagle-valley-sitters": {
+      "hosting": {
+        "eagle-valley-sitters": [
+          "eagle-valley-sitters"
+        ],
+        "nuxt-version": [
+          "nuxt-version"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
