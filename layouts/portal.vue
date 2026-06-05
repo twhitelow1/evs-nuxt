@@ -2,7 +2,7 @@
   <div class="portal-layout">
     <header class="portal-header">
       <div class="portal-header-inner">
-        <img src="/img/EVSlogo.webp" alt="Eagle Valley Sitters" class="portal-logo" />
+        <img src="https://eaglevalleysitters.com/EVSlogo.webp" alt="Eagle Valley Sitters" class="portal-logo" />
         <span class="portal-title">Owner Portal</span>
       </div>
       <nav class="portal-nav">

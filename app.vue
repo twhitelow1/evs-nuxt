@@ -1,6 +1,8 @@
 <template>
-  <NuxtLayout>
-    
+  <!-- Portal pages render completely standalone, no main site chrome -->
+  <NuxtPage v-if="isPortal" />
+
+  <NuxtLayout v-else>
     <div id="app">
       <!-- <div v-if="comingsoon === true">
       <v-container fluid style="background-color:#fff; height:100vh;">
@@ -178,6 +180,6 @@
   </NuxtLayout>
 </template>
 <script setup>
-// Logo swap is handled in CSS via <picture><source media="..."> in the
-// template. No JS needed.
+const route = useRoute()
+const isPortal = computed(() => route.path.startsWith('/portal'))
 </script>

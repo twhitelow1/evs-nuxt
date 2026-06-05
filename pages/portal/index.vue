@@ -1,7 +1,7 @@
 <template>
   <div class="portal-login">
     <div class="login-card">
-      <img src="/img/EVSlogo.webp" alt="Eagle Valley Sitters" class="logo" />
+      <img src="https://eaglevalleysitters.com/EVSlogo.webp" alt="Eagle Valley Sitters" class="logo" />
       <h2>Owner Portal</h2>
       <p>Sign in with your authorized Google account to manage site content.</p>
 
