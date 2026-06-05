@@ -1,4 +1,5 @@
 <template>
+  <div>
   <!-- Portal pages render completely standalone, no main site chrome -->
   <NuxtPage v-if="isPortal" />
 
@@ -178,6 +179,7 @@
       </div> <!-- /page width -->
     </div>
   </NuxtLayout>
+  </div>
 </template>
 <script setup>
 const route = useRoute()
