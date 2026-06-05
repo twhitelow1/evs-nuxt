@@ -84,12 +84,11 @@
       </section>
 
       <div class="form-footer">
-        <p v-if="saved" class="success-msg">✓ Rates saved successfully!</p>
-        <p v-if="error" class="error-msg">{{ error }}</p>
-        <NuxtLink v-if="saved" to="/" class="view-site-btn">← View Site</NuxtLink>
-        <button type="submit" class="save-btn" :disabled="saving">
-          {{ saving ? 'Saving...' : 'Save Rates' }}
-        </button>
+        <div class="footer-btns">
+          <NuxtLink to="/" class="nav-btn">← View Site</NuxtLink>
+          <NuxtLink to="/portal/dashboard" class="nav-btn">Dashboard</NuxtLink>
+          <button type="submit" class="save-btn">Save Rates</button>
+        </div>
       </div>
 
     </form>
@@ -101,9 +100,7 @@ import { DEFAULT_RATES, type RatesData } from '~/composables/useRates'
 
 definePageMeta({ layout: 'portal', middleware: 'portal-auth' })
 
-const { rates, saving, fetchRates, saveRates } = useRates()
-const saved = ref(false)
-
+const { rates, fetchRates, saveRates } = useRates()
 const form = ref<RatesData>(JSON.parse(JSON.stringify(rates.value)))
 
 onMounted(() => {
@@ -113,8 +110,6 @@ onMounted(() => {
 
 const handleSave = () => {
   saveRates(form.value)
-  saved.value = true
-  setTimeout(() => { saved.value = false }, 3000)
 }
 </script>
 
@@ -185,12 +180,29 @@ h2.mt { margin-top: 28px; }
 }
 
 .form-footer {
+  margin-top: 8px;
+}
+
+.footer-btns {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
-  margin-top: 8px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
+
+.nav-btn {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-btn:hover { background: #f5f5f5; }
 
 .save-btn {
   background: #66bfc7;
@@ -207,18 +219,6 @@ h2.mt { margin-top: 28px; }
 .save-btn:hover:not(:disabled) { background: #4aa8b0; }
 .save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-.view-site-btn {
-  background: white;
-  border: 1px solid #66bfc7;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #66bfc7;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.view-site-btn:hover { background: #f0fafb; }
 
 .success-msg { color: #43a047; font-weight: 500; }
 .error-msg { color: #e53935; }

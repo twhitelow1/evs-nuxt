@@ -48,9 +48,14 @@ const props = defineProps<{
 const { isEditMode } = useEditMode()
 const { getContent, saveContent } = useContent()
 
-const currentHtml = ref(getContent(props.contentKey, props.fallback))
+const currentHtml = ref(props.fallback)
 const saving = ref(false)
 const saved = ref(false)
+
+onMounted(async () => {
+  currentHtml.value = await getContent(props.contentKey, props.fallback)
+  editor.value?.commands.setContent(currentHtml.value)
+})
 
 // Watch for edit mode turning on — initialize editor with current content
 watch(isEditMode, (val) => {
@@ -68,11 +73,13 @@ const editor = useEditor({
   ],
 })
 
-const save = () => {
+const save = async () => {
   if (!editor.value) return
+  saving.value = true
   const html = editor.value.getHTML()
-  saveContent(props.contentKey, html)
+  await saveContent(props.contentKey, html)
   currentHtml.value = html
+  saving.value = false
   saved.value = true
   setTimeout(() => { saved.value = false }, 2000)
 }

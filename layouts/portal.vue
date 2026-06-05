@@ -8,12 +8,14 @@
       <nav class="portal-nav">
         <NuxtLink to="/portal/dashboard">Dashboard</NuxtLink>
         <NuxtLink to="/portal/edit-rates">Edit Rates</NuxtLink>
+        <NuxtLink to="/">← View Site</NuxtLink>
         <button class="signout-btn" @click="logOut">Sign Out</button>
       </nav>
     </header>
     <main class="portal-main">
       <slot />
     </main>
+    <ToastNotifications />
   </div>
 </template>
 

@@ -1,7 +1,12 @@
 <template>
   <div>
-    <h1>Welcome back, {{ user?.displayName?.split(' ')[0] }}</h1>
-    <p class="subtitle">What would you like to manage today?</p>
+    <div class="dashboard-header">
+      <div>
+        <h1>Welcome back, {{ user?.displayName?.split(' ')[0] }}</h1>
+        <p class="subtitle">What would you like to manage today?</p>
+      </div>
+      <NuxtLink to="/" class="view-site-btn">← View Site</NuxtLink>
+    </div>
 
     <div class="dashboard-cards">
       <NuxtLink to="/portal/edit-rates" class="dash-card">
@@ -48,8 +53,30 @@ h1 {
 
 .subtitle {
   color: #888;
-  margin-bottom: 36px;
+  margin-bottom: 0;
 }
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.view-site-btn {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.view-site-btn:hover { background: #f5f5f5; }
 
 .dashboard-cards {
   display: grid;

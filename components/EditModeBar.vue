@@ -1,10 +1,10 @@
 <template>
   <Teleport to="body">
-    <div class="edit-mode-bar" :class="{ 'is-editing': isEditMode }">
+    <div v-if="isAllowed || loading" class="edit-mode-bar" :class="{ 'is-editing': isEditMode, 'is-loading': loading }">
       <span class="edit-mode-bar-label">
-        {{ isEditMode ? '✏️ Edit Mode ON' : '✏️ Edit Mode' }}
+        {{ loading ? '...' : isEditMode ? '✏️ Edit Mode ON' : '✏️ Edit Mode' }}
       </span>
-      <button class="edit-mode-btn" @click="toggle">
+      <button v-if="!loading" class="edit-mode-btn" @click="toggle">
         {{ isEditMode ? 'Exit Edit Mode' : 'Enable Edit Mode' }}
       </button>
     </div>
@@ -13,6 +13,10 @@
 
 <script setup lang="ts">
 const { isEditMode, toggle } = useEditMode()
+const { isAllowed, loading, init } = useAuth()
+
+// Re-init on every page mount in case auth state hasn't resolved yet
+onMounted(() => { init() })
 </script>
 
 <style scoped>
@@ -34,6 +38,11 @@ const { isEditMode, toggle } = useEditMode()
 
 .edit-mode-bar.is-editing {
   background: #66bfc7;
+}
+
+.edit-mode-bar.is-loading {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .edit-mode-bar-label {

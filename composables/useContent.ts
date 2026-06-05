@@ -1,32 +1,33 @@
-// Local store for editable content — persists across navigation via localStorage.
-// TODO: swap getContent/saveContent for Firestore reads/writes once Firebase is enabled.
+import { doc, getDoc, setDoc, getFirestore } from 'firebase/firestore'
+import { getApps } from 'firebase/app'
 
-const STORAGE_KEY = 'evs_content'
-
-const loadCache = (): Record<string, string> => {
-  if (import.meta.server) return {}
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    return stored ? JSON.parse(stored) : {}
-  } catch {
-    return {}
-  }
-}
+const getDb = () => getFirestore(getApps()[0])
 
 export const useContent = () => {
-  const contentCache = useState<Record<string, string>>('content.cache', () => loadCache())
+  const contentCache = useState<Record<string, string>>('content.cache', () => ({}))
 
-  const getContent = (key: string, fallback: string): string => {
-    return contentCache.value[key] ?? fallback
-    // TODO: replace with Firestore getDoc when Firebase is enabled
+  const getContent = async (key: string, fallback: string): Promise<string> => {
+    if (import.meta.server) return fallback
+    if (key in contentCache.value) return contentCache.value[key]
+    try {
+      const snap = await getDoc(doc(getDb(), 'content', key))
+      const value = snap.exists() ? (snap.data().html as string) : fallback
+      contentCache.value[key] = value
+      return value
+    } catch {
+      return fallback
+    }
   }
 
-  const saveContent = (key: string, html: string) => {
+  const saveContent = async (key: string, html: string) => {
+    const { success, error } = useToast()
     contentCache.value[key] = html
-    if (import.meta.client) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(contentCache.value))
+    try {
+      await setDoc(doc(getDb(), 'content', key), { html })
+      success('Changes saved!')
+    } catch (e: any) {
+      error('Changes saved locally. They will sync when connection is restored.', e?.message)
     }
-    // TODO: replace with Firestore setDoc when Firebase is enabled
   }
 
   return { getContent, saveContent, contentCache }

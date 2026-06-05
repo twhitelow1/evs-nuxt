@@ -1,5 +1,5 @@
-// Local store for rates — persists across navigation via localStorage.
-// TODO: swap load/save for Firestore reads/writes once Firebase is enabled.
+import { doc, getDoc, setDoc, getFirestore } from 'firebase/firestore'
+import { getApps } from 'firebase/app'
 
 export interface RatesData {
   babysitting: {
@@ -35,38 +35,31 @@ export const DEFAULT_RATES: RatesData = {
   },
 }
 
-const STORAGE_KEY = 'evs_rates'
-
-const loadFromStorage = (): RatesData => {
-  if (import.meta.server) return JSON.parse(JSON.stringify(DEFAULT_RATES))
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    return stored ? JSON.parse(stored) : JSON.parse(JSON.stringify(DEFAULT_RATES))
-  } catch {
-    return JSON.parse(JSON.stringify(DEFAULT_RATES))
-  }
-}
+const getDb = () => getFirestore(getApps()[0])
 
 export const useRates = () => {
-  const rates = useState<RatesData>('rates', () => loadFromStorage())
+  const rates = useState<RatesData>('rates', () => JSON.parse(JSON.stringify(DEFAULT_RATES)))
   const saving = ref(false)
 
-  const fetchRates = () => {
-    if (import.meta.client) {
-      rates.value = loadFromStorage()
+  const fetchRates = async () => {
+    if (import.meta.server) return
+    try {
+      const snap = await getDoc(doc(getDb(), 'content', 'rates'))
+      if (snap.exists()) rates.value = snap.data() as RatesData
+    } catch {
+      // Fall back to defaults silently
     }
-    // TODO: replace with Firestore getDoc when Firebase is enabled
   }
 
   const saveRates = (data: RatesData) => {
-    saving.value = true
+    const { success, error } = useToast()
     rates.value = JSON.parse(JSON.stringify(data))
     if (import.meta.client) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
       window.dispatchEvent(new CustomEvent('evs:rates-updated'))
+      setDoc(doc(getDb(), 'content', 'rates'), data)
+        .then(() => success('Rates saved!'))
+        .catch((e) => error('Rates saved locally. Changes will sync when connection is restored.', e?.message))
     }
-    saving.value = false
-    // TODO: replace with Firestore setDoc when Firebase is enabled
   }
 
   return { rates, saving, fetchRates, saveRates }

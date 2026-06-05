@@ -105,6 +105,7 @@
         <!-- /navbar ends -->
         <NuxtPage />
         <EditModeBar />
+        <ToastNotifications />
         <!-- Footer -->
         <div class="container-fluid cloud-divider">
           <!-- Clouds SVG Divider -->
