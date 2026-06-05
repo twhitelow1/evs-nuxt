@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Only whitelisted users can read or write any content
+    function isAllowed() {
+      return request.auth != null &&
+        request.auth.token.email in [
+          'todd@dub-low.consulting',
+          'cat@eaglevalleysitters.com'
+        ];
+    }
+
+    // Public read for content (rates shown on live site)
+    // Only allowed users can write
+    match /content/{document} {
+      allow read: if true;
+      allow write: if isAllowed();
+    }
+
+    // Everything else is denied
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
