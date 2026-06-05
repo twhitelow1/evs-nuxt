@@ -31,6 +31,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: eagle-valley-sitters
           target: production
+          channelId: live
 
       - name: Deploy to Staging
         if: github.ref == 'refs/heads/staging'
@@ -40,3 +41,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: eagle-valley-sitters
           target: staging
+          channelId: live
