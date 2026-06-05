@@ -45,17 +45,19 @@ Accessible at `/portal` during development, `portal.eaglevalleysitters.com` in p
 
 ---
 
-## Phase 2 — Inline Text & Image Editing
+## Phase 2 — Inline Text & Image Editing ✅ IN PROGRESS
 
 **Goal:** Cat can browse the live site in "edit mode" and click any text or image to change it.
 
 ### Deliverables
-- [ ] Edit mode toggle in portal navbar (visible only when logged in)
-- [ ] Clicking any editable text shows an inline text editor
-- [ ] Clicking any image shows an image upload/replace dialog
-- [ ] All editable content stored in Firestore, loaded at runtime
-- [ ] Changes are live immediately after saving
-- [ ] Covers: Services, About, Team, Activities, Callout sections
+- [x] Edit mode toggle (floating pill, bottom-right of every page)
+- [x] TipTap rich text editor — inline editing with toolbar (bold, italic, headings, lists, align)
+- [x] Session-level save (persists until refresh, no backend required)
+- [x] Firestore save (fire-and-forget, activates once Firebase is enabled)
+- [x] All content sections wired: Services, About, Activities, Callout, Rates, Team, EventBabysitting, Pets, LongTermNanny, Contact, Hiring
+- [ ] Image editing — click any image to upload a replacement (Firebase Storage)
+- [ ] Media library — browse and manage all uploaded images from the portal
+- [ ] Gate Edit Mode bar behind auth check (one line, re-enable when Firebase Auth is live)
 
 ---
 

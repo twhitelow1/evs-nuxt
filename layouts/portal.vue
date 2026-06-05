@@ -91,3 +91,20 @@ const { logOut } = useAuth()
   padding: 40px 24px;
 }
 </style>
+
+<!-- Strip main site theme decorations from headings inside the portal -->
+<style>
+.portal-main h1,
+.portal-main h2,
+.portal-main h3,
+.portal-main h4,
+.portal-main h5 {
+  background: none !important;
+  background-image: none !important;
+  -webkit-text-fill-color: inherit !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+</style>

@@ -3,9 +3,7 @@
     <h1>Edit Rates</h1>
     <p class="subtitle">Changes save to the live site immediately.</p>
 
-    <div v-if="loading" class="loading">Loading current rates...</div>
-
-    <form v-else @submit.prevent="handleSave">
+    <form @submit.prevent="handleSave">
 
       <!-- Babysitting -->
       <section class="rate-section">
@@ -88,6 +86,7 @@
       <div class="form-footer">
         <p v-if="saved" class="success-msg">✓ Rates saved successfully!</p>
         <p v-if="error" class="error-msg">{{ error }}</p>
+        <NuxtLink v-if="saved" to="/" class="view-site-btn">← View Site</NuxtLink>
         <button type="submit" class="save-btn" :disabled="saving">
           {{ saving ? 'Saving...' : 'Save Rates' }}
         </button>
@@ -102,19 +101,18 @@ import { DEFAULT_RATES, type RatesData } from '~/composables/useRates'
 
 definePageMeta({ layout: 'portal', middleware: 'portal-auth' })
 
-const { rates, loading, saving, error, fetchRates, saveRates } = useRates()
+const { rates, saving, fetchRates, saveRates } = useRates()
 const saved = ref(false)
 
-const form = ref<RatesData>(JSON.parse(JSON.stringify(DEFAULT_RATES)))
+const form = ref<RatesData>(JSON.parse(JSON.stringify(rates.value)))
 
-onMounted(async () => {
-  await fetchRates()
+onMounted(() => {
+  fetchRates()
   form.value = JSON.parse(JSON.stringify(rates.value))
 })
 
-const handleSave = async () => {
-  saved.value = false
-  await saveRates(form.value)
+const handleSave = () => {
+  saveRates(form.value)
   saved.value = true
   setTimeout(() => { saved.value = false }, 3000)
 }
@@ -208,6 +206,19 @@ h2.mt { margin-top: 28px; }
 
 .save-btn:hover:not(:disabled) { background: #4aa8b0; }
 .save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.view-site-btn {
+  background: white;
+  border: 1px solid #66bfc7;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #66bfc7;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.view-site-btn:hover { background: #f0fafb; }
 
 .success-msg { color: #43a047; font-weight: 500; }
 .error-msg { color: #e53935; }

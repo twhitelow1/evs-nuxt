@@ -24,14 +24,9 @@
          <div class="container text-center">
             <div class="col-lg-6 col-lg-offset-6 col-sm-6">
                <div class="well">
-                  <!-- Section heading -->
-                  <h3>We're Hiring!</h3>
-                  <p>Are you an experienced babysitter or childcare professional looking to join our team?<br />Click the
-                     button below to apply.</p>
-                  <!-- Button -->
+                  <EditableContent content-key="hiring.body" label="We're Hiring Section" :fallback="`<h3>We're Hiring!</h3><p>Are you an experienced babysitter or childcare professional looking to join our team? Click the button below to apply.</p>`" />
                   <div class="page-scroll">
-                     <a class="btn" href="https://eaglevalleysitters.enginehire.io/application-form/195/4175">Apply
-                        Today</a>
+                     <a class="btn" href="https://eaglevalleysitters.enginehire.io/application-form/195/4175">Apply Today</a>
                   </div>
                   <!--/page-scroll -->
                </div>
@@ -74,28 +69,13 @@
          </svg>
          <div class="container">
             <div class="col-lg-8 col-lg-offset-2">
-               <!-- Section heading -->
                <div class="section-heading">
-                  <h2>Contact us</h2>
+                  <EditableContent content-key="contact.heading" label="Contact Heading" :fallback="'<h2>Contact us</h2>'" />
                </div>
             </div>
-            <!-- Contact -->
             <div class="col-lg-12 text-center">
-               <h4>Information</h4>
-               <!-- contact info -->
                <div class="contact-info">
-                  <p><i class="flaticon-back"></i><a
-                        href="mailto:cat@eaglevalleysitters.com">cat@eaglevalleysitters.com</a></p><br />
-                  <p><i class="fa fa-phone margin-icon"></i>Call or Text us at <a href="tel:19703419701">(970) 341-9701</a>
-                  </p><br />
-                  <p>Please note that we do not currently employ a receptionist.</p>
-                  <p>If your call is not answered, kindly email us or leave a voicemail and we will get back to you as soon
-                     as possible. </p>
-                  <p>To book a sitter, book online <a
-                        href="https://eaglevalleysitters.enginehire.io/application-form/195/4186">here</a> and fill out our
-                     client registration form</p><br />
-                  <p>First review our <a href="/faq">Frequently Asked Questions</a>.</p>
-                  <p>If your questions aren't answered there, simply type your message below.</p>
+                  <EditableContent content-key="contact.info" label="Contact Info" :fallback="contactFallback" />
                   <ContactForm></ContactForm>
                </div>
                <!-- address info -->
@@ -113,7 +93,7 @@
 
 <style></style>
 
-<script setup >
+<script setup>
 import Callout from "../components/Callout.vue";
 import Services from "../components/Services.vue";
 import Slider from "../components/Slider.vue";
@@ -126,5 +106,6 @@ import Pets from "../components/Pets.vue";
 import EventBabysitting from "../components/EventBabysitting.vue";
 import LongTermNanny from "../components/LongTermNanny.vue";
 
+const contactFallback = `<h4>Information</h4><p><i class="flaticon-back"></i><a href="mailto:cat@eaglevalleysitters.com">cat@eaglevalleysitters.com</a></p><p><i class="fa fa-phone margin-icon"></i>Call or Text us at <a href="tel:19703419701">(970) 341-9701</a></p><p>Please note that we do not currently employ a receptionist. If your call is not answered, kindly email us or leave a voicemail and we will get back to you as soon as possible.</p><p>To book a sitter, book online <a href="https://eaglevalleysitters.enginehire.io/application-form/195/4186">here</a> and fill out our client registration form.</p><p>First review our <a href="/faq">Frequently Asked Questions</a>. If your questions aren't answered there, simply type your message below.</p>`
 </script>
 

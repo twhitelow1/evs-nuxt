@@ -4,15 +4,13 @@
       <section id="rates" class="d-flex">
          <div class="container d-flex">
             <div class="col-lg- col-lg-offset-2">
-               <!-- Section heading -->
                <div class="section-heading">
-                  <h2>Our Rates</h2>
+                  <EditableContent content-key="rates.heading" label="Rates Heading" :fallback="'<h2>Our Rates</h2>'" />
                </div>
             </div>
             <div class="row d-flex align-items-stretch">
                <!-- Child Rates-->
                <div class="col-md-12 mb-5 text-center flex-fill">
-			      <!-- Price tables -->
                   <div class="pricing pricing-palden">
                      <div class="pricing-item pricing-item-featured justify-content-center col-lg-12 col-md-12 col-sm-12">
                         <div class="pricing-deco">
@@ -25,7 +23,7 @@
                            <div class="pricing-price"><span class="pricing-currency"></span></div>
                            <h3 class="pricing-title">BABYSITTING RATES</h3>
                         </div>
-					<!-- List -->
+                        <!-- Prices — driven by portal editor, not editable inline -->
                         <h3>Pricing</h3>
                         <i>Will be charged to your card on file</i>
                         <ul class="pricing-feature-list">
@@ -33,10 +31,8 @@
                            <li>2 Children: ${{ r.babysitting.child2 }}</li>
                            <li>3 Children: ${{ r.babysitting.child3 }}</li>
                            <li>4 Children: ${{ r.babysitting.child4 }}</li>
-                           <p>* More than 4 children will require 2 sitters. If children are in diapers, the child to sitter ratio is 2:1.</p>
-                           <p>All cancellations made within 48 hours of the booking start time will incur a full charge.  Unfortunately, there can be no exceptions to this policy.</p>
-                           <p>* Please note that cancellations made during Christmas Vacation weeks (12/18- 1/5) have a 7 day cancellation policy.</p>
                         </ul>
+                        <EditableContent content-key="rates.babysitting.notes" label="Babysitting Notes" :fallback="babysittingNotesFallback" />
                         <h4>Booking Fees</h4>
                         <i>${{ r.babysitting.bookingFeePerDay }} per day will be charged to the card on file</i>
                         <h3>Terms</h3>
@@ -45,24 +41,18 @@
                            <li>${{ r.babysitting.lastMinuteFee }} last minute booking fee (under 24 hours notice).</li>
                            <li>Payment is made via credit card to Eagle Valley Sitters, up front and in full.</li>
                            <li>A {{ r.babysitting.creditCardFeePercent }}% credit card processing fee will be added to all payments.</li>
-                           <li>Please note that you are responsible for any parking fees your sitter may incur, and a $5 valet tip if applicable. We respectfully request that you pay parking fees directly to your sitter.</li>
-                           <li>Cancellations made within 48 hours of your reservation start time incur a full charge.</li>
-                           <li><b>Rates & terms are subject to change during peak times & public holidays.</b></li>
-                           <li><b>For More Information on Holiday Rates check our <a href="https://eaglevalleysitters.com/faq">FAQ page</a>.</b></li>
                         </ul>
-                        <!-- Button-->
+                        <EditableContent content-key="rates.babysitting.terms-extra" label="Babysitting Extra Terms" :fallback="babysittingTermsFallback" />
                         <div class="page-scroll">
                            <a class="btn" href="https://eaglevalleysitters.enginehire.io/application-form/195/4186">Book Today</a>
                         </div>
                      </div>
-					 <!--/pricing-item-->
                   </div>
-                  <!-- /col-sm-12-->
                </div>
                <!-- End Child Rates-->
+
                <!-- Pet Rates-->
                <div class="col-md-12 text-center flex-fill mb-5">
-			      <!-- Price tables -->
                   <div class="pricing pricing-palden">
                      <div class="pricing-item pricing-item-featured justify-content-center col-lg-12 col-md-12 col-sm-12">
                         <div class="pricing-deco">
@@ -75,37 +65,25 @@
                            <div class="pricing-price"><span class="pricing-currency"></span></div>
                            <h3 class="pricing-title">PET SITTING RATES</h3>
                         </div>
-					      <!-- List -->
                         <h3>Pricing</h3>
                         <i>Will be charged to your card</i>
                         <ul class="pricing-feature-list">
                            <li>${{ r.petSitting.hourlyRate }} Per Hour</li>
                            <li>${{ r.petSitting.overnightRate }} Per Night</li>
                         </ul>
-                        <h3>Terms</h3>
-                        <i>Overnight In-Home Pet Sitting, Dog Walking, Hourly Pet Sitting</i>
-                        <ul class="pricing-feature-list">
-                           <li>One Hour Minimum</li>
-                           <li>${{ r.babysitting.lastMinuteFee }} last minute booking fee (under 24 hours notice)</li>
-                           <li>Cancellations made within 48 hours of your reservation start time incur a full charge</li>
-                           <li>Rates are subject to increases during peak periods and holidays</li>
-                           <li><b>For More Information on Holiday Rates check our <a href="https://eaglevalleysitters.com/faq">FAQ page</a>.</b></li>
-                        </ul>
-                        <!-- Button-->
+                        <EditableContent content-key="rates.pet.terms" label="Pet Sitting Terms" :fallback="petTermsFallback" />
                         <div class="page-scroll">
                            <a class="btn" href="https://eaglevalleysitters.enginehire.io/application-form/195/4186">Book Today</a>
                         </div>
                      </div>
-					 <!--/pricing-item-->
                   </div>
-                  <!-- /col-sm-12-->
                </div>
                <!-- End Pet Rates-->
             </div>
+
             <div class="row">
                <!-- Long Term Nanny Placement Rates-->
                <div class="col-md-12 text-center m-5">
-			      <!-- Price tables -->
                   <div class="pricing pricing-palden">
                      <div class="pricing-item pricing-item-featured justify-content-center col-lg-12 col-md-12 col-sm-12">
                         <div class="pricing-deco">
@@ -118,38 +96,41 @@
                            <div class="pricing-price"><span class="pricing-currency"></span></div>
                            <h3 class="pricing-title">Long Term Nanny Placement</h3>
                         </div>
-					      <!-- List -->
-                           <p class="pricing-feature-text">
-                              Eagle Valley Sitters charges a referral fee that is based on a number of factors.
-                              For specific pricing information based on the unique needs of your family, please contact us via email at
-                              <a href="mailto:cat@eaglevalleysitters.com">cat@eaglevalleysitters.com</a>
-                           </p>
+                        <EditableContent content-key="rates.nanny.body" label="Nanny Placement Rates" :fallback="nannyFallback" />
                         <div class="page-scroll">
                            <a class="btn" href="mailto:cat@eaglevalleysitters.com">Find A Nanny</a>
                         </div>
                      </div>
-					      <!--/pricing-item-->
                   </div>
-                  <!-- /col-sm-12-->
                </div>
-               <!-- End Nanny Rates-->
             </div>
-            <!-- /container-->
          </div>
       </section>
-      <!-- /Section ends -->
-	</div>
+  </div>
 </template>
 
 <script setup lang="ts">
 const { rates, fetchRates } = useRates()
 const r = rates
 
-onMounted(() => { fetchRates() })
+onMounted(() => {
+  fetchRates()
+  window.addEventListener('evs:rates-updated', fetchRates)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('evs:rates-updated', fetchRates)
+})
+
+const babysittingNotesFallback = `<p>* More than 4 children will require 2 sitters. If children are in diapers, the child to sitter ratio is 2:1.</p><p>All cancellations made within 48 hours of the booking start time will incur a full charge. Unfortunately, there can be no exceptions to this policy.</p><p>* Please note that cancellations made during Christmas Vacation weeks (12/18–1/5) have a 7 day cancellation policy.</p>`
+
+const babysittingTermsFallback = `<ul class="pricing-feature-list"><li>Please note that you are responsible for any parking fees your sitter may incur, and a $5 valet tip if applicable. We respectfully request that you pay parking fees directly to your sitter.</li><li>Cancellations made within 48 hours of your reservation start time incur a full charge.</li><li><b>Rates &amp; terms are subject to change during peak times &amp; public holidays.</b></li><li><b>For More Information on Holiday Rates check our <a href="https://eaglevalleysitters.com/faq">FAQ page</a>.</b></li></ul>`
+
+const petTermsFallback = `<h3>Terms</h3><i>Overnight In-Home Pet Sitting, Dog Walking, Hourly Pet Sitting</i><ul class="pricing-feature-list"><li>One Hour Minimum</li><li>Last minute booking fee (under 24 hours notice)</li><li>Cancellations made within 48 hours of your reservation start time incur a full charge</li><li>Rates are subject to increases during peak periods and holidays</li><li><b>For More Information on Holiday Rates check our <a href="https://eaglevalleysitters.com/faq">FAQ page</a>.</b></li></ul>`
+
+const nannyFallback = `<p>Eagle Valley Sitters charges a referral fee that is based on a number of factors. For specific pricing information based on the unique needs of your family, please contact us via email at <a href="mailto:cat@eaglevalleysitters.com">cat@eaglevalleysitters.com</a></p>`
 </script>
 
 <style>
-.subtext {
-   font-size: 2em;
-}
+.subtext { font-size: 2em; }
 </style>

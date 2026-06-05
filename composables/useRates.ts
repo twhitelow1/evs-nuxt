@@ -1,4 +1,5 @@
-import { doc, getDoc, setDoc } from 'firebase/firestore'
+// Local store for rates — persists across navigation via localStorage.
+// TODO: swap load/save for Firestore reads/writes once Firebase is enabled.
 
 export interface RatesData {
   babysitting: {
@@ -34,41 +35,39 @@ export const DEFAULT_RATES: RatesData = {
   },
 }
 
+const STORAGE_KEY = 'evs_rates'
+
+const loadFromStorage = (): RatesData => {
+  if (import.meta.server) return JSON.parse(JSON.stringify(DEFAULT_RATES))
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY)
+    return stored ? JSON.parse(stored) : JSON.parse(JSON.stringify(DEFAULT_RATES))
+  } catch {
+    return JSON.parse(JSON.stringify(DEFAULT_RATES))
+  }
+}
+
 export const useRates = () => {
-  const { $db } = useNuxtApp()
-  const rates = useState<RatesData>('rates', () => DEFAULT_RATES)
-  const loading = ref(false)
+  const rates = useState<RatesData>('rates', () => loadFromStorage())
   const saving = ref(false)
-  const error = ref('')
 
-  const fetchRates = async () => {
-    loading.value = true
-    try {
-      const snap = await getDoc(doc($db, 'content', 'rates'))
-      if (snap.exists()) {
-        rates.value = snap.data() as RatesData
-      }
-    } catch (e) {
-      // Firestore not yet enabled or offline — fall back to defaults silently
-      console.warn('Could not load rates from Firestore, using defaults.')
-    } finally {
-      loading.value = false
+  const fetchRates = () => {
+    if (import.meta.client) {
+      rates.value = loadFromStorage()
     }
+    // TODO: replace with Firestore getDoc when Firebase is enabled
   }
 
-  const saveRates = async (data: RatesData) => {
+  const saveRates = (data: RatesData) => {
     saving.value = true
-    error.value = ''
-    try {
-      await setDoc(doc($db, 'content', 'rates'), data)
-      rates.value = data
-    } catch (e: any) {
-      error.value = 'Failed to save. Please try again.'
-      throw e
-    } finally {
-      saving.value = false
+    rates.value = JSON.parse(JSON.stringify(data))
+    if (import.meta.client) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+      window.dispatchEvent(new CustomEvent('evs:rates-updated'))
     }
+    saving.value = false
+    // TODO: replace with Firestore setDoc when Firebase is enabled
   }
 
-  return { rates, loading, saving, error, fetchRates, saveRates }
+  return { rates, saving, fetchRates, saveRates }
 }

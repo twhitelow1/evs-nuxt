@@ -104,6 +104,7 @@
         </nav>
         <!-- /navbar ends -->
         <NuxtPage />
+        <EditModeBar />
         <!-- Footer -->
         <div class="container-fluid cloud-divider">
           <!-- Clouds SVG Divider -->
@@ -162,7 +163,7 @@
           <!-- / container -->
           <hr>
           <p>Copyright © 2023 / Website Developed by <a href="https://dublowdigital.com">DubLow Digital</a></p>
-          <p><a href="/privacy">Privacy Policy</a>.</p>
+          <p><a href="/privacy">Privacy Policy</a> - <NuxtLink to="/portal">Portal</NuxtLink></p>
           <p><a href="https://eaglevalleysitters.enginehire.io/login/195">Account Login</a>
             -
             <a href="https://play.google.com/store/apps/details?id=com.ionic.eaglevalleysitters">Android App</a>

@@ -5,10 +5,15 @@
       <h2>Owner Portal</h2>
       <p>Sign in with your authorized Google account to manage site content.</p>
 
-      <button class="google-btn" :disabled="signingIn" @click="handleSignIn">
+      <!-- TODO: re-enable Google sign-in once Firebase Auth is configured -->
+      <NuxtLink to="/portal/dashboard" class="google-btn">
+        Enter Portal
+      </NuxtLink>
+
+      <!-- <button class="google-btn" :disabled="signingIn" @click="handleSignIn">
         <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
         {{ signingIn ? 'Signing in...' : 'Sign in with Google' }}
-      </button>
+      </button> -->
 
       <p v-if="error" class="error-msg">{{ error }}</p>
     </div>
